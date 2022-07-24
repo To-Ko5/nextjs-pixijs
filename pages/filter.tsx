@@ -8,6 +8,8 @@ const Filter = () => {
     container: PIXI.Container,
     sprite: PIXI.Sprite,
     sprite2: PIXI.Sprite,
+    noiseFilter: PIXI.Filter,
+    glitchFilter: PIXI.Filter,
     scroll: number
   const sizes = {
     width: 0,
@@ -71,10 +73,10 @@ const Filter = () => {
 
   // フィルター
   const addFilter = () => {
-    const noiseFilter = new PIXI.filters.NoiseFilter()
+    noiseFilter = new PIXI.filters.NoiseFilter()
     noiseFilter.noise = 0.7
     noiseFilter.seed = 0.8
-    const glitchFilter = new GlitchFilter()
+    glitchFilter = new GlitchFilter()
 
     sprite.filters = [noiseFilter, glitchFilter]
     sprite2.filters = [noiseFilter, glitchFilter]
@@ -106,6 +108,7 @@ const Filter = () => {
       // console.log('check')
       sprite.filters = []
     } else {
+      sprite.filters = [noiseFilter, glitchFilter]
     }
   }
   return (
