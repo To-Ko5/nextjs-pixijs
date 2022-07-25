@@ -1,6 +1,7 @@
 import type { NextPage } from 'next'
 import { useEffect } from 'react'
 import * as PIXI from 'pixi.js'
+import { NoiseFilter } from '@pixi/filter-noise'
 import { GlitchFilter } from 'pixi-filters'
 
 const Filter = () => {
@@ -8,8 +9,8 @@ const Filter = () => {
     container: PIXI.Container,
     sprite: PIXI.Sprite,
     sprite2: PIXI.Sprite,
-    noiseFilter: PIXI.Filter,
-    glitchFilter: PIXI.Filter,
+    noiseFilter: NoiseFilter,
+    glitchFilter: GlitchFilter,
     scroll: number
   const sizes = {
     width: 0,
