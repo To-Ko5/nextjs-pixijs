@@ -102,15 +102,19 @@ const Filter = () => {
 
   const tick = () => {
     // console.log(scroll)
-    sprite.position.y = sizes.height - scroll
-    sprite2.position.y = sizes.height + 500 - scroll
-    // console.log(sprite.position.y, sizes.height / 2)
-    if (sprite.position.y < sizes.height / 2) {
-      // console.log('check')
-      sprite.filters = []
-    } else {
-      sprite.filters = [noiseFilter, glitchFilter]
-    }
+    const spriteArray = [sprite, sprite2]
+    let distance = 0
+    spriteArray.forEach((sprite) => {
+      sprite.position.y = sizes.height - scroll
+      sprite2.position.y = sizes.height + distance - scroll
+      distance += 500
+      if (sprite.position.y < sizes.height / 2) {
+        // console.log('check')
+        sprite.filters = []
+      } else {
+        sprite.filters = [noiseFilter, glitchFilter]
+      }
+    })
   }
   return (
     <>
