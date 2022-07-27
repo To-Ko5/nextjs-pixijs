@@ -1,0 +1,12 @@
+.header {
+  color: #fff;
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  padding: 16px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
