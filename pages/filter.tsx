@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import * as PIXI from 'pixi.js'
 import { NoiseFilter } from '@pixi/filter-noise'
 import { GlitchFilter } from 'pixi-filters'
+import Layout from '../components/Layout'
 
 const Filter = () => {
   let app: PIXI.Application,
@@ -118,17 +119,19 @@ const Filter = () => {
   }
   return (
     <>
-      <div
-        id="main"
-        style={{
-          height: '100%',
-          width: '100%',
-          maxHeight: '1200px',
-          position: 'fixed',
-          top: 0,
-          left: 0
-        }}
-      ></div>
+      <Layout>
+        <div
+          id="main"
+          style={{
+            height: '100%',
+            width: '100%',
+            maxHeight: '1200px',
+            position: 'fixed',
+            top: 0,
+            left: 0
+          }}
+        ></div>
+      </Layout>
     </>
   )
 }
